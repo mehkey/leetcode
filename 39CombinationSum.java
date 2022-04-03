@@ -14,6 +14,7 @@ class Solution {
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
                 tempList.remove(tempList.size() - 1);
+                ;
             }
         }
     }
