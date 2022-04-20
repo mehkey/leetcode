@@ -9,10 +9,7 @@ class Solution:
                 
                 n = board[i][row] 
 
-                #if n == "3":
-                    #print (n)
                 if not n == "." and m.get(n):
-                    #print("HEEEERE")
                     return False
                 m[n] = n
             return True
@@ -32,7 +29,7 @@ class Solution:
             m = {}
             for i in range(0,3):
                 for j in range(0,3):
-                    n = board[3*x+i][3*j+y] 
+                    n = board[3*x+i][3*y+j] 
                     if not n == "." and m.get(n):
                         return False
                     m[n] = n
