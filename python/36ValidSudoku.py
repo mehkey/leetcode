@@ -4,35 +4,39 @@ class Solution:
         
         
         def validRow( board: List[List[str]],row:int)-> bool:
-            m = {}
+            m = set()
             for i in range(0,9):
                 
                 n = board[i][row] 
 
-                if not n == "." and m.get(n):
+                #if n == "3":
+                    #print (n)
+                if not n == "." and n in m:
+                    #print("HEEEERE")
                     return False
-                m[n] = n
+                m.add(n)
             return True
         
         def validColumn( board: List[List[str]],column:int)-> bool:
-            m = {}
+            m = set()
             for i in range(0,9):
                 
                 n = board[column][i] 
-                if not n == "." and m.get(n):
+                if not n == "." and n in m:
                     return False
 
-                m[n] = n
+                m.add(n)
             return True
         
         def validSquare( board: List[List[str]],x:int,y:int)-> bool:
-            m = {}
+            m = set()
             for i in range(0,3):
                 for j in range(0,3):
                     n = board[3*x+i][3*y+j] 
-                    if not n == "." and m.get(n):
+                    #print(n)
+                    if not n == "." and n in m:
                         return False
-                    m[n] = n
+                    m.add(n)
             return True
             
         for i in range(0,9):
@@ -42,7 +46,6 @@ class Solution:
         for i in range(0,9):
             if not validRow(board,i):
                 return False
-        
         
         for i in range(0,3):
             for j in range(0,3):
