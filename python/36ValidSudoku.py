@@ -30,7 +30,6 @@ class Solution:
             for i in range(0,3):
                 for j in range(0,3):
                     n = board[3*x+i][3*y+j] 
-                    #print(n)
                     if not n == "." and n in m:
                         return False
                     m.add(n)
