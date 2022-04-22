@@ -9,10 +9,7 @@ class Solution:
                 
                 n = board[i][row] 
 
-                #if n == "3":
-                    #print (n)
                 if not n == "." and n in m:
-                    #print("HEEEERE")
                     return False
                 m.add(n)
             return True
