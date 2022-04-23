@@ -16,6 +16,7 @@ class Solution:
         
 
 
+
         
         def validColumn( board: List[List[str]],column:int)-> bool:
             m = set()
