@@ -15,3 +15,4 @@ def min_meeting_rooms(self, intervals: List[Interval]) -> int:
                 e += 1
             maxC = max(maxC, count)
         return maxC
+        
