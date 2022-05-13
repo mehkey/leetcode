@@ -22,7 +22,9 @@ class Solution:
         current = head
         
         while last != None:
-            print(last.val)
+            #print(last.val)
+            #print(current.val)
+            #print("-------")
             
             temp2 = last.next
 
@@ -32,11 +34,20 @@ class Solution:
                 previous = current
                 current = temp
             
+            #print(last.val)
+            #print(current.val)
+            #print("-------")
+            
             current.next = temp2
-
+            
+            temp3 = last
             last = findLast(current.next)
             
-            previous = last
-            current = last.next
+            previous = temp3
+            current = current.next
+            #print(last.val)
+            #print(current.val)
+            #print(previous.val)
+            #print("-------")
 
         return dummyNode.next
