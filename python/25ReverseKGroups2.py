@@ -5,19 +5,17 @@
 #         self.next = next
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        
-        
+
         dummyNode = ListNode(0,head)
-        
+
         def findLast(node):
             for i in range(k-1):
                 node = node.next
             return node
-        
-        groupPrevious = dummyNode
-        
-        while True:
 
+        groupPrevious = dummyNode
+
+        while True:
 
             last = findLast(dummyNode.next)
             if not last:
@@ -36,26 +34,6 @@ class Solution:
             temp = groupPrevious.next
             groupPrevious.next= last
             groupPrevious = temp
-            #print(last.val)
-            #print(current.val)
-            #print("-------")
-            
-            #current.next = temp2
-            
-            #temp3 = last
-            
-            #last = findLast(current.next)
-            
-            #previous = temp3
-            
-            #temp = current.next
-            #current.next = previous
-            #previous = current
-            #current = temp
-            #print(last.val)
-            #print(current.val)
-            #print(previous.val)
-            #print("-------")
 
         return dummyNode.next
     
