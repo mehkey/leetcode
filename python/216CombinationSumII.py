@@ -4,10 +4,9 @@ class Solution:
         res = []
         
         current = []
-        
-        
+
         def backtrack( n , current , i  ):
-            
+
             if n < 0 :
                 return
 
