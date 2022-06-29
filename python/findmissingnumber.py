@@ -30,9 +30,6 @@ class Solution:
 
         res = []
 
-        #[0, 1, 3, 50, 75]
-        #lower = 0 and upper = 99
-
         if ( nums[l] - lower ) > 0:
             if (nums[l] - lower > 1 ) :
                 res.append(str(lower) + "->" + str(nums[l]-1))
@@ -40,6 +37,10 @@ class Solution:
                 res.append(str(lower))
 
         while l < r:
+
+            #5 9   -> 6 -> 8
+            #5 6   -> ""
+            #5 7   -> 6 -> 8
 
             if ( nums[l+1] - nums[l] > 2 ) :
                 res.append(str(nums[l]+1) + "->" + str(nums[l+1]-1))
@@ -58,3 +59,53 @@ class Solution:
         
     
 
+class TestSolution(unittest.TestCase):
+    def test_none_0(self):
+        s = ""
+        p = ""
+        self.assertTrue(Solution().isMatch(s, p))
+
+    def test_none_1(self):
+        s = ""
+        p = "a"
+        self.assertFalse(Solution().isMatch(s, p))
+
+    def test_no_symbol_equal(self):
+        s = "abcd"
+        p = "abcd"
+        self.assertTrue(Solution().isMatch(s, p))
+
+    def test_no_symbol_not_equal_0(self):
+        s = "abcd"
+        p = "efgh"
+        self.assertFalse(Solution().isMatch(s, p))
+
+    def test_no_symbol_not_equal_1(self):
+        s = "ab"
+        p = "abb"
+        self.assertFalse(Solution().isMatch(s, p))
+
+    def test_symbol_0(self):
+        s = ""
+        p = "a*"
+        self.assertTrue(Solution().isMatch(s, p))
+
+    def test_symbol_1(self):
+        s = "a"
+        p = "ab*"
+        self.assertTrue(Solution().isMatch(s, p))
+
+    def test_symbol_2(self):
+        # E.g.
+        #   s a b b
+        # p 1 0 0 0
+        # a 0 1 0 0
+        # b 0 0 1 0
+        # * 0 1 1 1
+        s = "abb"
+        p = "ab*"
+        self.assertTrue(Solution().isMatch(s, p))
+
+
+if __name__ == "__main__":
+    unittest.main()
