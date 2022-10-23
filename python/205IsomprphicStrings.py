@@ -14,17 +14,14 @@ class Solution:
             d = t[i]
             if c not in m:
                 m[c] = d
-            else:
-                if m[c] != d:
-                    return False
+            elif m[c] != d:
+                return False
             
             if d not in n:
                 n[d] = c
-            else:
-                if n[d] != c:
-                    return False
+            elif n[d] != c:
+                return False
 
-            
             i+= 1
         
         return True
