@@ -32,6 +32,7 @@ Constraints:
 [input] double depth
 
 0 ≤ depth ≤ 10
+
 '''
 
 A pash
