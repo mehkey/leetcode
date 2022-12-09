@@ -66,3 +66,39 @@ class Solution:
                 return -1
 
         return [get(q) for q in queries ]
+
+
+class Solution:
+    def treeQueries(self, root: Optional[TreeNode], queries: List[int]) -> List[int]:
+
+        node_to_parent = {}
+        value_to_node = {}
+        node_to_level = {}
+        node_to_depths = {}
+        
+        def dfs(i, p, d):
+            if not i:
+                return 0
+            value_to_node[i.val] = i
+            node_to_parent[i] = p
+            node_to_level[i] = d
+            l = dfs(i.left, i, d+1)
+            r = dfs(i.right, i, d+1)
+            node_to_depths[i] = [l, r]
+            return max(l, r)+1
+        
+        dfs(root, None, 0)
+
+        @cache
+        def get(q):
+            i = value_to_node[q]
+            if i == root:
+                return -1
+            p = node_to_parent[i]
+            if p.left == i:
+                mx = node_to_level[p] + node_to_depths[p][1]
+            else:
+                mx = node_to_level[p] + node_to_depths[p][0]
+            return max(mx, get(p.val))
+        
+        return [get(q) for q in queries]   
