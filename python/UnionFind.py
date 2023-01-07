@@ -21,10 +21,10 @@ class Solution:
             
             if
                 t += n - len(adj[e[i]]) + 1 
-        
-        
+
         return t
         """
+
         class dsu:
             def __init__(self,n):
                 self.parent=[i for i in range(n)]
@@ -34,10 +34,10 @@ class Solution:
                 if x!=self.parent[x]:
                     self.parent[x]=self.find(self.parent[x])
                 return self.parent[x]
+
             def union(self,u,v):
                 u,v=self.find(u),self.find(v)
-                #print(u)
-                #print(v)
+
                 if u!=v:
                     if self.size[u]<self.size[v]:
                         u,v=v,u
@@ -52,8 +52,6 @@ class Solution:
                 return mp
 
         d=dsu(n)
-
-        #print(n)
 
         for u,v in edges:
             #print(d.parent)
