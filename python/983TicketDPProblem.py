@@ -126,7 +126,7 @@ class Solution:
         if len(days) == 0:
             return 0
 
-        dp = {}
+        dp = {} #
 
         dp[len(days)-1] = min(costs[0],costs[1],costs[2])
         
