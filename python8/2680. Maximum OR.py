@@ -16,9 +16,7 @@ class Solution:
 
 
         '''
-        
-        
-        
+
 
         nums.sort()
         
