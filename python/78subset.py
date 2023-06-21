@@ -31,7 +31,7 @@ class Solution:
 
             if i == len(nums) - 1:
                 return cur
-            
+
             res = [[]]
             for j in range(i,len(nums)):
 
@@ -65,8 +65,9 @@ class Solution:
             return res
 
         return dfs([],0)
-        
+
         """
+
         
         
         
