@@ -7,8 +7,6 @@ class Solution:
         
         O(m^2*n)
         
-        
-        
         """
         m = len(matrix)
         n = len(matrix[0])
