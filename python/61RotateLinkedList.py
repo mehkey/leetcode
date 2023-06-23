@@ -42,8 +42,6 @@ class Solution:
         
         lastNode.next = temp
         
-        
-        
         return head
 
         
