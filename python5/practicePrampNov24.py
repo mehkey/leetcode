@@ -117,9 +117,9 @@ def shifted_arr_search(arr, num):
   r = len(arr) - 1
   
   while l <= r:
-    
+
     mid = (l + r) // 2  # l + (r - l) // 2
-    
+
     if arr[mid] == num:
       return mid
 
