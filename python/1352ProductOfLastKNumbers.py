@@ -16,3 +16,4 @@ class ProductOfNumbers:
             return self.products[-1]
         else:
             return (self.products[-1]//self.products[-1-k])
+
