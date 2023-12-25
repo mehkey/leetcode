@@ -1,6 +1,7 @@
 class Solution:
     def minSum(self, nums1: List[int], nums2: List[int]) -> int:
         
+        
         s1 = sum(nums1)
         s2 = sum(nums2)
         
