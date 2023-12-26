@@ -1,6 +1,7 @@
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
 
+        
         graph = collections.defaultdict(list)
         r_graph = collections.defaultdict(list)
         ancestor = [set() for i in range(numCourses)]
