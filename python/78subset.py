@@ -47,19 +47,18 @@ class Solution:
         
 
         res = []
-        
+
         def dfs(cur, i):
 
             res.append(cur)
-            
+
             if i == len(nums)  :
                 return cur.copy()
-            
-            
+
             for j in range(i,len(nums)):
-                
+
                 newcurrent = cur + [nums[j]] if len(cur) > 0 else [nums[j]]
-      
+
                 dfs(newcurrent , j+1)
 
             return res
