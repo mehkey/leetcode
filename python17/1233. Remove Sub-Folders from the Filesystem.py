@@ -15,12 +15,12 @@ class Solution:
         def dfs():
             
         '''
-        s = set(folder)
+        # s = set(folder)
         
         res = []
         
         for f in folder:
-            j = f
+            #j = f
             f = f.split('/')
             cur = []
             
@@ -31,5 +31,5 @@ class Solution:
                     found = True
                     break
             if not found:
-                res.append(j)
+                res.append(f)
         return res
