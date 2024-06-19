@@ -6,5 +6,4 @@ class Solution:
         for c in str(n):
             p *= int(c)
             s += int(c)
-        
         return p - s
