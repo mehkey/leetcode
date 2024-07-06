@@ -14,8 +14,7 @@ lis.sort()
 
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
-        
-        #print(lis)
+
         l = bisect_left(lis,low)
         
         r = bisect_right(lis,high)
