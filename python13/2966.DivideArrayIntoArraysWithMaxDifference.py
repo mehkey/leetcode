@@ -2,7 +2,7 @@ class Solution:
     def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
         nums.sort()
         cur = nums[0]
-        
+        t = True 
         arr = []
         ca = []
         for n in nums:
@@ -25,3 +25,4 @@ class Solution:
         if len(ca) > 0:
             arr.append(ca)
         return arr
+    
