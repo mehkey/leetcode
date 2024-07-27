@@ -23,7 +23,9 @@ class Solution:
 
         r = -1
         for i in range(N):
-            cc = s[i]
+            cc = s[i]            
+            if not cc:
+                
             if dp(i+1, cc)  >= 2 :
                 r = max(r, 1)
             for j in range(i+1,N):
