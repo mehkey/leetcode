@@ -61,3 +61,21 @@ class Solution:
             #print(w)
             rr.append(w)
         return rr
+
+
+        products.sort()
+        res, prefix, i = [], '', 0
+        for c in word:
+            prefix += c
+            i = bisect.bisect_left(products, prefix, i)
+            res.append([w for w in products[i:i + 3] if w.startswith(prefix)])
+        return res
+
+        fun suggestedProducts(a: Array<String>, s: String) = mutableListOf<List<String>>().apply {
+            a.sort()
+            val sb = StringBuilder()
+            s.forEach {
+                sb.append(it)
+                add(mutableListOf<String>().apply { a.forEach { if (it.startsWith(sb) && size < 3) add(it) } })
+            }
+        }
