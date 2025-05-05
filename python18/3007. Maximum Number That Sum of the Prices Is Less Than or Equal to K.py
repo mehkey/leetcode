@@ -13,4 +13,14 @@ class Solution:
     
     def findMaximumNumber(self, k: int, x: int) -> int:
         self.x = x
+#        return bisect_right(range((1 << 63) - 1), k, key=self.price) - 2
+
         return bisect_right(range((1 << 63) - 1), k, key=self.price) - 2
+
+    #def findMaximumNumber2(self, k: int, x: int) -> int:
+    #    self.x = x
+    #    return bisect_right(range((1 << 63) - 1), k, key=self.price) - 2
+
+    def findTheLast(self) -> int:
+        return 0
+
